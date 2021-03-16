@@ -8,7 +8,7 @@ public class Paddle extends Rectangle {
 
     int id;
     int yVelocity;
-    int speed = 10;
+    int speed = 20;
 
 
     Paddle(int x, int y, int PADDLE_W, int PADDLE_H, int id) {
@@ -67,11 +67,11 @@ public class Paddle extends Rectangle {
     }
 
     public void setYDirection(int yDirection) {
-
+        yVelocity = yDirection;
     }
 
     public void move() {
-
+        y=y+yVelocity;
     }
 
     public void draw(Graphics g) {
