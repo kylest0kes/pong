@@ -38,7 +38,8 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     public void newPaddles() {
-
+        paddleP1 = new Paddle(0, (GAME_H/2)-(PADDLE_H/2), PADDLE_W, PADDLE_H, 1);
+        paddleP2 = new Paddle(GAME_W-PADDLE_W, (GAME_H/2)-(PADDLE_H/2), PADDLE_W, PADDLE_H, 2);
     }
 
     public void paint(Graphics g) {
