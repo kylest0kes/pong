@@ -9,8 +9,9 @@ public class Paddle extends Rectangle {
     int id;
     int yVelocity;
 
-    Paddle(int x, int y, int paddleW, int paddleH, int id) {
-
+    Paddle(int x, int y, int PADDLE_W, int PADDLE_H, int id) {
+        super(x, y, PADDLE_W, PADDLE_H);
+        this.id = id;
     }
 
     public void keyPressed(KeyEvent e) {
@@ -30,6 +31,11 @@ public class Paddle extends Rectangle {
     }
 
     public void draw(Graphics g) {
-
+        if(id == 1) {
+            g.setColor(Color.RED);
+        } else {
+            g.setColor(Color.BLUE);
+        }
+        g.fillRect(x, y, width, height);
     }
 }

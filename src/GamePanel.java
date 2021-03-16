@@ -50,7 +50,8 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     public void draw(Graphics g) {
-
+        paddleP1.draw(g);
+        paddleP2.draw(g);
     }
 
     public void move() {
@@ -76,7 +77,6 @@ public class GamePanel extends JPanel implements Runnable {
                 checkCollision();
                 repaint();
                 delta--;
-                System.out.println("TEST");
             }
         }
     }
