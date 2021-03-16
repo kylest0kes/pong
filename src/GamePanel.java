@@ -110,6 +110,20 @@ public class GamePanel extends JPanel implements Runnable {
         if(paddleP2.y >= (GAME_H-PADDLE_H)) {
             paddleP2.y = GAME_H-PADDLE_H;
         }
+
+        //GIVES PLAYER POINT AND RESTARTS GAME
+        if(ball.x <= 0) {
+            score.player2++;
+            newPaddles();
+            newBall();
+            System.out.println(score.player2 + " " + score.player1);
+        }
+        if(ball.x >= GAME_W - BALL_DIAMETER) {
+            score.player1++;
+            newPaddles();
+            newBall();
+            System.out.println(score.player2 + " " + score.player1);
+        }
     }
 
     public void run() {
