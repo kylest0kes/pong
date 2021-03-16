@@ -38,8 +38,8 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     public void newPaddles() {
-        paddleP1 = new Paddle(0, (GAME_H/2)-(PADDLE_H/2), PADDLE_W, PADDLE_H, 1);
-        paddleP2 = new Paddle(GAME_W-PADDLE_W, (GAME_H/2)-(PADDLE_H/2), PADDLE_W, PADDLE_H, 2);
+        paddleP1 = new Paddle(10, (GAME_H/2)-(PADDLE_H/2), PADDLE_W, PADDLE_H, 1);
+        paddleP2 = new Paddle((GAME_W-PADDLE_W) - 10, (GAME_H/2)-(PADDLE_H/2), PADDLE_W, PADDLE_H, 2);
     }
 
     public void paint(Graphics g) {
@@ -59,7 +59,19 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     public void checkCollision() {
-
+        //STOPS PADDLES AT WINDOW EDGES
+        if(paddleP1.y <= 0) {
+            paddleP1.y = 0;
+        }
+        if(paddleP1.y >= (GAME_H-PADDLE_H)) {
+            paddleP1.y = GAME_H-PADDLE_H;
+        }
+        if(paddleP2.y <= 0) {
+            paddleP2.y = 0;
+        }
+        if(paddleP2.y >= (GAME_H-PADDLE_H)) {
+            paddleP2.y = GAME_H-PADDLE_H;
+        }
     }
 
     public void run() {
