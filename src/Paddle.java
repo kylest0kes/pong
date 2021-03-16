@@ -8,7 +8,7 @@ public class Paddle extends Rectangle {
 
     int id;
     int yVelocity;
-    int speed = 20;
+    int speed = 10;
 
 
     Paddle(int x, int y, int PADDLE_W, int PADDLE_H, int id) {
