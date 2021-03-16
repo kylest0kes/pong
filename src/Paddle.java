@@ -4,7 +4,7 @@ import java.awt.print.PrinterGraphics;
 import java.util.*;
 import javax.swing.*;
 
-public class Paddle {
+public class Paddle extends Rectangle {
     Paddle() {
 
     }
